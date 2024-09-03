@@ -3,6 +3,7 @@ CREATE TABLE "NormalUser" (
     "id" SERIAL NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
+    "userName" TEXT NOT NULL,
 
     CONSTRAINT "NormalUser_pkey" PRIMARY KEY ("id")
 );
@@ -30,6 +31,9 @@ CREATE TABLE "newProduct" (
     "id" SERIAL NOT NULL,
     "aurhorId" INTEGER NOT NULL
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "NormalUser_email_key" ON "NormalUser"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Review_id_key" ON "Review"("id");

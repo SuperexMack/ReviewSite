@@ -15,8 +15,9 @@ datasource db {
 
 model NormalUser{
   id Int @id @default(autoincrement())
-  email String
+  email String @unique
   password String
+  userName String
   reviews Review[]
 }
 
