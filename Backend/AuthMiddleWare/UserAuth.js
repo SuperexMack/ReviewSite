@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken")
 require("dotenv").config()
 const secretCode = process.env.SECRET_CODE
 
-
 const authMiddleWare = (req,res,next)=>{
    let checkTheAuthorization = req.headers.authorization
    if(!checkTheAuthorization.startsWith("Bearer ") || !checkTheAuthorization){
