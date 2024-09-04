@@ -79,7 +79,7 @@ router.post("/register", async (req,res)=>{
 
 
 const checkLogin = zod.object({
-    email: zod.string().email,
+    email: zod.string().email(),
     password: zod.string(),
 })
 
@@ -107,12 +107,10 @@ router.post("/Login", async (req, res) => {
             })
         }
         else {
-            
-
             const UserId = userChecker.id
             const token = jwt.sign({ UserId }, SecretCode)
             return res.json({
-                msg: token,
+                token: token,
                 msg: "Welcome Back to the site again"
             })
         }
