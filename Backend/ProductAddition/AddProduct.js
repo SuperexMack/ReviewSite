@@ -39,7 +39,6 @@ router.post("/AddItem" , authMiddleWare , async(req,res)=>{
                 where:{
                     title: title
                 }
-               
             })
 
             console.log("second")
