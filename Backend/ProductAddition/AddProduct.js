@@ -82,8 +82,7 @@ router.post("/AddItem" , authMiddleWare , async(req,res)=>{
                 error: error.message 
             });
         }
-
-        
+    
 
     }
 })

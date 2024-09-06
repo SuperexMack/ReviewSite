@@ -4,12 +4,13 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const UserAuth = require("./NormalUser/NormalUserData")
 const AddProduct = require("./ProductAddition/AddProduct")
+const cors = require("cors")
 require("dotenv").config()
 let SecretCode = process.env.SECRET_CODE;
 console.log(SecretCode)
 const PORT = process.env.PORT
 
-
+app.use(cors())
 app.use(express.json())
 
 
