@@ -5,7 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function AddProduct(){
-
     const [title,setTitle] = useState("")
     const [description,setDescription] = useState("")
     const getToken = localStorage.getItem("authorization")
