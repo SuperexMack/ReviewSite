@@ -1,8 +1,8 @@
 const express = require("express")
 const app = express()
-const UserAuth = require("./NormalUser/NormalUserData")
-const AddProduct = require("./ProductAddition/AddProduct")
-const AddComment = require("./Comments/Comments")
+const UserAuth = require("../NormalUser/NormalUserData")
+const AddProduct = require("../ProductAddition/AddProduct")
+const AddComment = require("../Comments/Comments")
 const cors = require("cors")
 require("dotenv").config()
 let SecretCode = process.env.SECRET_CODE;
