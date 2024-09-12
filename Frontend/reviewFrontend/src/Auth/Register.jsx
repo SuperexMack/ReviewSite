@@ -10,18 +10,21 @@ function Register(){
     const [email,setEmail] = useState("")
     const [password ,setPassword] = useState("")
     const [userName , setUserName] = useState("")
+    const [loading , setLoading] = useState(false);
 
     let Navigate = useNavigate()
 
    
 
     const UserRegister = async()=>{
+        setLoading(true)
         await axios.post("http://localhost:9000/v1/register" , {
             email : email,
             password : password,
             userName : userName
         })
         .then((response)=>{
+            
             toast.success("User Registered successfully")
             setTimeout(()=>Navigate("/") , 3000);
             localStorage.setItem("authorization" , "Bearer " + response.data.token)
@@ -36,6 +39,15 @@ function Register(){
     return(
         <>
         <Navbar></Navbar>
+
+        {loading ? (
+        
+        <div className="flex justify-center items-center h-screen">
+          <h1 className="text-4xl relative left-[5%]">Loading...</h1>
+        </div>
+
+        ) : (
+       
         <div className="flex justify-center items-center h-screen">
 
             <div className="bg-slate-200 flex flex-col h-[500px] w-[400px] relative left-[200px] rounded-xl p-6">
@@ -56,6 +68,8 @@ function Register(){
             </div>
 
         </div>
+
+        )}
         <ToastContainer />
         </>
     )

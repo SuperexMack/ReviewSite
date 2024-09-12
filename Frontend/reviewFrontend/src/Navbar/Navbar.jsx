@@ -11,12 +11,12 @@ function Navbar(){
 
             <div className="flex flex-col items-center justify-center text-3xl cursor-pointer">
                <ul className="space-y-6 font-bold mt-[100px]">
-                <li className=" bg-black text-white rounded-2xl p-2"><i class="fa-solid fa-house"></i><Link to="/"> Home</Link></li> 
-                <li className=" bg-black text-white rounded-2xl p-2"><i class="fa-solid fa-lock"></i><Link to="/Register"> Login</Link></li>
-                <li className=" bg-black text-white rounded-2xl p-2"><i class="fa-solid fa-phone"></i> Contact</li>
-                <li className=" bg-black text-white rounded-2xl p-2"><i class="fa-solid fa-shop"></i><Link to="/addproduct">List your Product</Link></li>
-                <li className=" bg-black text-white rounded-2xl p-2"><i class="fa-regular fa-face-smiling-hands"></i> Support Us</li>
-                <li className=" bg-black text-white rounded-2xl p-2"><i class="fa-solid fa-arrow-right-to-bracket"></i > <Link to="/searchItem"> Search Product</Link></li>
+                <li className=" bg-black text-white rounded-2xl p-2"><Link to="/"> Home</Link></li> 
+                <li className=" bg-black text-white rounded-2xl p-2"><Link to="/Register"> Login</Link></li>
+                <li className=" bg-black text-white rounded-2xl p-2">Contact</li>
+                <li className=" bg-black text-white rounded-2xl p-2"><Link to="/addproduct">List your Product</Link></li>
+                <li className=" bg-black text-white rounded-2xl p-2"> Support Us</li>
+                <li className=" bg-black text-white rounded-2xl p-2"> <Link to="/searchItem"> Search Product</Link></li>
                </ul>
             </div>
 
