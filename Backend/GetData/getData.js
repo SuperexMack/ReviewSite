@@ -46,7 +46,6 @@ router.get("/getProductdata/:id"  , async (req,res)=>{
 
            
         }
-
         catch {
             return res.json({
                 msg: "Something went wrong while fetching the data"
@@ -60,7 +59,9 @@ router.get("/getProductdata/:id"  , async (req,res)=>{
         })
     }
     
-   
+
 })
 
+
 module.exports = router
+
