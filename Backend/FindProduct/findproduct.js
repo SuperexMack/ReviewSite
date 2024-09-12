@@ -4,7 +4,6 @@ const zod = require("zod")
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-
 const searchItem = zod.object({
     title : zod.string()
 })
@@ -16,7 +15,6 @@ router.post("/findProduct" , async (req,res)=>{
             msg : "The data you are entering is wrong"
         })
     }
-
     else{
         let getTitle = req.body.title
         try{
