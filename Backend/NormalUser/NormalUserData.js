@@ -40,7 +40,6 @@ router.post("/register", async (req,res)=>{
                 email : email,
             }
         })
-
         console.log("baad aaya")
         if(userChecker){
             return res.json({
