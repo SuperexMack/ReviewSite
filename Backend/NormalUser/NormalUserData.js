@@ -43,7 +43,7 @@ router.post("/register", async (req,res)=>{
 
         console.log("baad aaya")
         if(userChecker){
-            res.json({
+            return res.json({
                 msg:"User like this already exist so try to add a new email"
             })
         }

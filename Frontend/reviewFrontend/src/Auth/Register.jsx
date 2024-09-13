@@ -24,10 +24,18 @@ function Register(){
             userName : userName
         })
         .then((response)=>{
+
+            if(response.data.msg === "User like this already exist so try to add a new email"){
+                toast.error("User already exist || Add a new email")
+                setTimeout(()=>Navigate("/") , 3000);
+            }
             
+            else{
             toast.success("User Registered successfully")
             setTimeout(()=>Navigate("/") , 3000);
             localStorage.setItem("authorization" , "Bearer " + response.data.token)
+            }
+            
         })
 
         .catch((error)=>{
@@ -43,7 +51,7 @@ function Register(){
         {loading ? (
         
         <div className="flex justify-center items-center h-screen">
-          <h1 className="text-4xl relative left-[5%]">Loading...</h1>
+          <h1 className="text-[70px] relative left-[5%]">Loading...</h1>
         </div>
 
         ) : (
@@ -52,7 +60,7 @@ function Register(){
 
             <div className="bg-slate-200 flex flex-col h-[500px] w-[400px] relative left-[200px] rounded-xl p-6">
 
-                <h1 className="text-4xl mt-2">User Register</h1>
+                <h1 className="text-[40px] mt-2">User Register</h1>
                 <div className="flex flex-col space-y-5 p-3">
                <label>E-mail</label>
                <input onChange={(e)=>setEmail(e.target.value)} type="email" className="p-2" placeholder="Email*"></input>

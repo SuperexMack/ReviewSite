@@ -30,6 +30,7 @@ model Product{
   author NormalUser @relation(fields: [authorId] , references: [id])
   authorId Int
   comments Comments[]
+  image String
  
 }
 

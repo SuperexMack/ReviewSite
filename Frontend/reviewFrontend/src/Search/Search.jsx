@@ -12,8 +12,10 @@ function Search(){
   const [Product,setProduct] = useState("")
   const [id , setId] = useState(0)
   const [findItem , setFindItem] = useState(false)
+  const [loading , setLoading] = useState(false)
   console.log(id)
    const findTheProduct = async()=>{
+    setLoading(true)
       await axios.post("http://localhost:9000/v1/findProduct/client/findProduct",{
         title : Product
       })
@@ -42,7 +44,13 @@ function Search(){
     return(
         <>
         <Navbar></Navbar>
-        <div className="h-screen flex flex-col items-center">
+        {loading ?(
+          <div className="flex justify-center items-center h-screen">
+          <h1 className="text-[70px] relative left-[9%]">Loading...</h1>
+        </div>
+
+        ) : (
+          <div className="h-screen flex flex-col items-center">
            <div className="mt-10 flex-wrap relative left-[200px] flex flex-row gap-4 justify-center items-center w-[600px] h-[200px]">
              <input onChange={(e)=>setProduct(e.target.value)} className=" w-[400px] h-[50px] p-4 border-2 border-blue-500 rounded-lg cursor-pointer" type="search"></input>
              <button onClick={findTheProduct} className="bg-slate-300 p-3 rounded-xl cursor-pointer">Search Product</button>
@@ -55,7 +63,10 @@ function Search(){
         </div>
 
         </div>
+       
+        )}
         <ToastContainer />
+        
         </>
     )
 }

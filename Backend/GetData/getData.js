@@ -29,6 +29,7 @@ router.get("/getProductdata/:id"  , async (req,res)=>{
                   
                 title: FindElement.title,
                 description: FindElement.description,
+                image :FindElement.image,
                     
                 comments:FindElement.comments.map(comment=>({
                     content : comment.content,

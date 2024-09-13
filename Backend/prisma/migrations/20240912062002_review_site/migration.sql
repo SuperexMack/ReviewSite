@@ -13,7 +13,8 @@ CREATE TABLE "Product" (
     "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "authorId" INTEGER NOT NULL
+    "authorId" INTEGER NOT NULL,
+    "image" TEXT NOT NULL
 );
 
 -- CreateTable

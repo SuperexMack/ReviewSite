@@ -12,6 +12,7 @@ function GetProduct(){
     const [detail ,setDetail] = useState("")
     const [content , setContent] = useState("")
     const [comments , setComments] = useState([])
+    const [image ,setImage] = useState("")
     const [loading , setLoading] = useState(true)
     const [secondLoading , setSecondLoading] = useState(true);
 
@@ -51,6 +52,7 @@ function GetProduct(){
           setTitle(respond.data.title)
           setDetail(respond.data.description)
           setComments(respond.data.comments)
+          setImage(respond.data.image)
           setLoading(false)
       })
 
@@ -80,7 +82,7 @@ function GetProduct(){
             </div>
            
            <div>
-            <p className="p-11 text-red-700">
+            <p className="p-11">
                {detail}
             </p>
            </div>
@@ -88,7 +90,7 @@ function GetProduct(){
           </div>
 
           <div className="h-[500px] w-[500px]  rounded-2xl flex justify-center items-center">
-           <img src={colgate}></img>
+           <img className="rounded-xl" src={image}></img>
           </div>
 
         </div>
@@ -98,7 +100,7 @@ function GetProduct(){
         <div className="mt-9 h-[auto] w-[full] flex flex-col justify-center">
 
             <div className="flex flex-row justify-center items-center">
-            <h1 className="text-[40px]">Comment Section</h1>
+            <h1 className="text-[40px] text-red-600">Comment Section</h1>
             </div> 
 
             <div className="flex flex-row justify-center items-center space-x-5 mt-8">
@@ -116,7 +118,7 @@ function GetProduct(){
                 {comments.map((commentValue , index)=>(
               
                 <div key={index}>
-                    <p><span className="text-red-700">{commentValue.author}</span> --- <span className="text-green-600">{commentValue.content}</span></p>
+                    <p><span className="text-red-700">{commentValue.author}</span> --- <span>{commentValue.content}</span></p>
                 </div>
                 
               
